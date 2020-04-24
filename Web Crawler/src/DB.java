@@ -7,12 +7,13 @@ import java.sql.Statement;
 public class DB {
 	 
 	public Connection conn = null;
- 
+ 	private String YOUR_DB_USERNAME = null;
+	private String YOUR_PASSWORD = null;
 	public DB() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/Crawler";
-			conn = DriverManager.getConnection(url, "root", "phuong498");
+			conn = DriverManager.getConnection(url, YOUR_DB_USERNAME, YOUR_PASSWORD);
 			System.out.println("Database Connected");
 		} catch (SQLException e) {
 			e.printStackTrace();
